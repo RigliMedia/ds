@@ -1,0 +1,563 @@
+<!-- Main Body -->
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+function searchcriteria(x)
+
+{
+
+ if(x==1)
+
+ {
+
+   document.TheForm.chinese1.disabled=true;
+
+   document.TheForm.western1.disabled=true;
+
+
+
+   document.TheForm.day1.disabled=false;
+
+   document.TheForm.month1.disabled=false;
+
+   document.TheForm.year1.disabled=false;
+
+
+
+   document.TheForm.chinese2.disabled=true;
+
+   document.TheForm.western2.disabled=true;
+
+
+
+   document.TheForm.day2.disabled=false;
+
+   document.TheForm.month2.disabled=false;
+
+   document.TheForm.year2.disabled=false;
+
+
+
+   document.TheForm.dobs.value=1;
+
+ }     
+
+ else
+
+ {
+
+   document.TheForm.chinese1.disabled=false;
+
+   document.TheForm.western1.disabled=false;
+
+
+
+   document.TheForm.day1.disabled=true;
+
+   document.TheForm.month1.disabled=true;
+
+   document.TheForm.year1.disabled=true;
+
+
+
+   document.TheForm.chinese2.disabled=false;
+
+   document.TheForm.western2.disabled=false;
+
+
+
+   document.TheForm.day2.disabled=true;
+
+   document.TheForm.month2.disabled=true;
+
+   document.TheForm.year2.disabled=true;
+
+
+
+   document.TheForm.dobs.value=0;
+
+ }
+
+}      
+
+
+
+
+
+function check()
+
+{
+
+
+ch=new Array();
+
+// "Rat"
+ch[0]=new Array("7", "7", "4", "6", "8", "1", "6", "1", "8", "5", "6", "6");
+// "Ox"
+ch[1]=new Array("7", "6", "3", "6", "6", "8", "1", "6", "1", "8", "3", "5");
+// "Tiger"
+ch[2]=new Array("4", "3", "6", "4", "6", "3", "8", "1", "6", "1", "8", "7");
+// "Rabbit"
+ch[3]=new Array("6", "6", "4", "7", "7", "6", "3", "8", "1", "6", "1", "8");
+// "Dragon"
+ch[4]=new Array("8", "6", "6", "6", "6", "7", "6", "6", "8", "1", "6", "6");
+// "Snake"
+ch[5]=new Array("1", "8", "4", "6", "6", "7", "3", "4", "3", "8", "1", "6");
+// "Horse"
+ch[6]=new Array("6", "1", "8", "3", "3", "3", "7", "7", "4", "5", "8", "1");
+// "Goat"
+ch[7]=new Array("1", "6", "1", "8", "6", "4", "7", "7", "4", "4", "3", "8");
+// "Monkey"
+ch[8]=new Array("8", "1", "6", "1", "8", "3", "4", "4", "7", "4", "6", "6");
+// "Rooster"
+ch[9]=new Array("5", "8", "1", "6", "6", "8", "5", "4", "4", "3", "4", "4");
+// "Dog"
+ch[10]=new Array("6", "3", "8", "1", "1", "1", "8", "3", "6", "4", "6", "6");
+// "Pig"
+ch[11]=new Array("6", "5", "7", "8", "6", "6", "1", "8", "6", "4", "6", "6");
+
+we=new Array();
+
+// "Aries"
+we[0]=new Array("7", "7", "4", "6", "8", "1", "6", "1", "8", "5", "6", "6");
+// "Taurus"
+we[1]=new Array("7", "6", "3", "6", "6", "8", "1", "6", "1", "8", "3", "5");
+// "Gemini"
+we[2]=new Array("4", "4", "6", "4", "4", "3", "8", "1", "6", "1", "8", "7");
+// "Cancer"
+we[3]=new Array("6", "6", "4", "7", "7", "6", "3", "8", "1", "6", "1", "8");
+// "Leo"
+we[4]=new Array("8", "6", "6", "6", "6", "7", "6", "6", "8", "1", "6", "1");
+// "Virgo"
+we[5]=new Array("1", "8", "4", "6", "6", "7", "3", "4", "3", "8", "1", "6");
+// "Libra"
+we[6]=new Array("6", "1", "8", "3", "3", "3", "7", "7", "4", "5", "8", "1");
+// "Scorpio"
+we[7]=new Array("1", "6", "1", "8", "6", "4", "7", "7", "4", "4", "3", "8");
+// "Sagittarius"
+we[8]=new Array("8", "1", "6", "1", "8", "3", "4", "4", "7", "4", "6", "6");
+// "Capricorn"
+we[9]=new Array("5", "8", "1", "6", "6", "8", "5", "4", "4", "3", "4", "4");
+// "Aquarius"
+we[10]=new Array("6", "3", "8", "1", "1", "1", "8", "3", "6", "4", "6", "6");
+// "Pisces"
+we[11]=new Array("6", "5", "7", "8", "1", "6", "1", "8", "6", "4", "6", "6");
+
+
+
+
+   dob=document.TheForm.dobs.value;
+
+
+  if(dob == 1)
+
+  {
+
+        month1 = document.TheForm.month1.options[document.TheForm.month1.selectedIndex].value;
+
+        day1 = document.TheForm.day1.options[document.TheForm.day1.selectedIndex].value;
+
+        year1 = document.TheForm.year1.options[document.TheForm.year1.selectedIndex].value;
+
+
+
+        month2 = document.TheForm.month2.options[document.TheForm.month2.selectedIndex].value;
+
+        day2 = document.TheForm.day2.options[document.TheForm.day2.selectedIndex].value;
+
+        year2 = document.TheForm.year2.options[document.TheForm.year2.selectedIndex].value;
+
+
+
+        if(month1 == 0)
+
+        {
+
+            alert("Please select  your month");
+
+            document.TheForm.month1.focus();
+
+        }else if(day1 == 0 )
+
+        {
+
+            alert("Please select  your day");
+
+            document.TheForm.day1.focus();
+
+
+
+        }else if(year1 == 0)
+
+        {
+
+            alert("Please select  your year");
+
+            document.TheForm.year1.focus();
+
+        }else if(month2 == 0)
+
+        {
+
+            alert("Please select  your partner's month");
+
+            document.TheForm.month2.focus();
+
+        }else if(day2 == 0)
+
+        {
+
+            alert("Please select  your partner's day");
+
+            document.TheForm.day2.focus();
+
+        }else if(year2 == 0)
+
+        {
+
+            alert("Please select  your partner's year");
+
+            document.TheForm.year2.focus();
+
+        }
+
+        else
+
+        {
+
+                document.TheForm.action="calculator.htm";
+
+                document.TheForm.img1.value=1;
+
+                document.TheForm.img2.value=1;
+
+                document.TheForm.submit();
+
+        }
+
+   }
+
+   else
+
+   {
+
+        chinese1=document.TheForm.chinese1.options[document.TheForm.chinese1.selectedIndex].value;
+
+        western1=document.TheForm.western1.options[document.TheForm.western1.selectedIndex].value;
+
+        chinese2=document.TheForm.chinese2.options[document.TheForm.chinese2.selectedIndex].value;
+
+        western2=document.TheForm.western2.options[document.TheForm.western2.selectedIndex].value;
+
+
+//! -- [
+        
+        ch1i=document.TheForm.chinese1.selectedIndex;
+        we1i=document.TheForm.western1.selectedIndex;
+        ch2i=document.TheForm.chinese2.selectedIndex
+        we2i=document.TheForm.western2.selectedIndex;
+
+//!document.write(ch1i+' '+ch2i+' '+ch[ch2i][ch1i-1]+'<br>');
+//!document.write(we1i+' '+we2i+' '+we[we2i][we1i-1]+'');
+
+  comp = Math.round ( ( ( ch[ch2i-1][ch1i-1]*75 ) + ( we[we2i-1][we1i-1]*25 ) ) / 8 );
+
+//!  alert( comp );
+
+//! ] --
+
+        if(chinese1 =="Chinese")
+
+        {
+
+            alert("Please select  your Chinese sign");
+
+            document.TheForm.chinese1.focus();
+
+        }else if(western1 =="Western")
+
+        {
+
+            alert("Please select your Western sign ");
+
+            document.TheForm.western1.focus();
+
+        }else if(chinese2 =="Chinese")
+
+        {
+
+            alert("Please select your partner's Chinese sign");
+
+            document.TheForm.chinese2.focus();
+
+        }else if(western2 =="Western")
+
+        {
+
+            alert("Please select your partner's Western sign");
+
+            document.TheForm.western2.focus();
+
+        }
+
+        else
+
+        {
+
+                document.TheForm.action="calculator.htm";
+
+                document.TheForm.img1.value=1;
+
+                document.TheForm.img2.value=1;
+
+                
+                document['img1'].src='compat/'+chinese1+'_'+western1+'.gif';
+                document['img2'].src='compat/'+chinese2+'_'+western2+'.gif';
+                
+                document['indi1'].width=comp*4;
+                document['indi2'].width=(100-comp)*4;
+                
+                document.TheForm.cfield.value=comp+'%';
+
+//!             document.TheForm.submit();
+        }
+
+   }
+
+}
+
+//-->
+
+</SCRIPT>
+
+
+
+<FORM METHOD=POST  name="TheForm">
+
+<INPUT TYPE='hidden' name='dobs' value='0'>
+
+<INPUT TYPE="hidden" name="img1" value="">
+
+<INPUT TYPE="hidden" name="img2" value="">
+
+</head>
+
+
+
+  <table width='100%' align="center" border="0" cellspacing="0" cellpadding="0">
+
+    <tr> 
+
+      <td> 
+
+        <table align="center" width="100%" border="0" cellspacing="2" cellpadding="2">
+
+          <tr bgcolor="orange"> 
+
+            <td>
+
+              <table width="100%" border="0" cellspacing="0" cellpadding="2">
+
+                <tr bgcolor="white"> 
+
+                  <td> 
+
+                    <table width="100%" border="0" cellspacing="1" cellpadding="4">
+
+                      <tr bgcolor="orange"> 
+
+                        <td>
+
+                          <table bgcolor="white"  cellspacing="0" cellpadding="0" width="100%" border="0">
+
+                            <tr> 
+
+                              <td colspan="2"> 
+
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+
+                                  <tr bgcolor="#009900" colspan="2"> 
+
+                                    <td height="45" align="center" valign="middle"> 
+
+                                      <a style="font-size: 14pt; color: #FFFFFF;" href="">DoubleSign® Compatible 
+
+                                      By Horoscope® Calculator </a> 
+
+                                    </td>
+
+                                  </tr>
+
+                                </table>
+
+                              </td>
+
+                            </tr>
+
+                             
+
+<tr> 
+
+<td colspan="2">  
+
+</tr>
+
+<tr>
+
+  <td height="15"> </td>
+
+  <td height="15"> </td>
+
+</tr>
+
+<tr> 
+
+ <td width= '50%' align="center" valign="middle"><b>Your Birthdate or DoubleSign™</b></td>
+
+ <td width= '50%' align="center" valign="middle"><b>Partner's Birthdate or DoubleSign™</b></td>
+
+</tr>
+
+<tr> 
+
+ <td colspan="2">  
+
+</tr>
+
+<tr>
+
+  <td height="5"> </td>
+
+  <td height="5"> </td>
+
+</tr>
+
+<tr> 
+
+ <td width= '50%' align="center" valign="top"><br> 
+
+  <input type=radio name="searchcr" value="ondob" onClick="searchcriteria(1)">
+
+  <select name="month1" disabled="true"><option value='0' SELECTED>MM</option><option value='1'>Jan</option><option value='2'>Feb</option><option value='3'>Mar</option><option value='4'>Apr</option><option value='5'>May</option><option value='6'>Jun</option><option value='7'>Jul</option><option value='8'>Aug</option><option value='9'>Sep</option><option value='10'>Oct</option><option value='11'>Nov</option><option value='12'>Dec</option></select>
+
+  <select name="day1" disabled="true"><option value='0' SELECTED>DD</option><option value='1'>01</option><option value='2'>02</option><option value='3'>03</option><option value='4'>04</option><option value='5'>05</option><option value='6'>06</option><option value='7'>07</option><option value='8'>08</option><option value='9'>09</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option><option value='17'>17</option><option value='18'>18</option><option value='19'>19</option><option value='20'>20</option><option value='21'>21</option><option value='22'>22</option><option value='23'>23</option><option value='24'>24</option><option value='25'>25</option><option value='26'>26</option><option value='27'>27</option><option value='28'>28</option><option value='29'>29</option><option value='30'>30</option><option value='31'>31</option></select>
+
+  <select name="year1" disabled="true"><option value='1920'>1920</option><option value='1921'>1921</option><option value='1922'>1922</option><option value='1923'>1923</option><option value='1924'>1924</option><option value='1925'>1925</option><option value='1926'>1926</option><option value='1927'>1927</option><option value='1928'>1928</option><option value='1929'>1929</option><option value='1930'>1930</option><option value='1931'>1931</option><option value='1932'>1932</option><option value='1933'>1933</option><option value='1934'>1934</option><option value='1935'>1935</option><option value='1936'>1936</option><option value='1937'>1937</option><option value='1938'>1938</option><option value='1939'>1939</option><option value='1940'>1940</option><option value='1941'>1941</option><option value='1942'>1942</option><option value='1943'>1943</option><option value='1944'>1944</option><option value='1945'>1945</option><option value='1946'>1946</option><option value='1947'>1947</option><option value='1948'>1948</option><option value='1949'>1949</option><option value='1950'>1950</option><option value='1951'>1951</option><option value='1952'>1952</option><option value='1953'>1953</option><option value='1954'>1954</option><option value='1955'>1955</option><option value='1956'>1956</option><option value='1957'>1957</option><option value='1958'>1958</option><option value='1959'>1959</option><option value='1960'>1960</option><option value='0' SELECTED>YYYY</option><option value='1961'>1961</option><option value='1962'>1962</option><option value='1963'>1963</option><option value='1964'>1964</option><option value='1965'>1965</option><option value='1966'>1966</option><option value='1967'>1967</option><option value='1968'>1968</option><option value='1969'>1969</option><option value='1970'>1970</option><option value='1971'>1971</option><option value='1972'>1972</option><option value='1973'>1973</option><option value='1974'>1974</option><option value='1975'>1975</option><option value='1976'>1976</option><option value='1977'>1977</option><option value='1978'>1978</option><option value='1979'>1979</option><option value='1980'>1980</option><option value='1981'>1981</option><option value='1982'>1982</option><option value='1983'>1983</option><option value='1984'>1984</option><option value='1985'>1985</option><option value='1986'>1986</option><option value='1987'>1987</option><option value='1988'>1988</option><option value='1989'>1989</option><option value='1990'>1990</option><option value='1991'>1991</option><option value='1992'>1992</option><option value='1993'>1993</option><option value='1994'>1994</option><option value='1995'>1995</option><option value='1996'>1996</option><option value='1997'>1997</option><option value='1998'>1998</option><option value='1999'>1999</option><option value='2000'>2000</option><option value='2001'>2001</option></select>
+
+ </td>
+
+ <td width= '50%' align="center" valign="top"><br> 
+
+  <select name="month2" disabled="true"><option value='0' SELECTED>MM</option><option value='1'>Jan</option><option value='2'>Feb</option><option value='3'>Mar</option><option value='4'>Apr</option><option value='5'>May</option><option value='6'>Jun</option><option value='7'>Jul</option><option value='8'>Aug</option><option value='9'>Sep</option><option value='10'>Oct</option><option value='11'>Nov</option><option value='12'>Dec</option></select>
+
+  <select name="day2" disabled="true"><option value='0' SELECTED>DD</option><option value='1'>01</option><option value='2'>02</option><option value='3'>03</option><option value='4'>04</option><option value='5'>05</option><option value='6'>06</option><option value='7'>07</option><option value='8'>08</option><option value='9'>09</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option><option value='17'>17</option><option value='18'>18</option><option value='19'>19</option><option value='20'>20</option><option value='21'>21</option><option value='22'>22</option><option value='23'>23</option><option value='24'>24</option><option value='25'>25</option><option value='26'>26</option><option value='27'>27</option><option value='28'>28</option><option value='29'>29</option><option value='30'>30</option><option value='31'>31</option></select>
+
+  <select name="year2" disabled="true"><option value='1920'>1920</option><option value='1921'>1921</option><option value='1922'>1922</option><option value='1923'>1923</option><option value='1924'>1924</option><option value='1925'>1925</option><option value='1926'>1926</option><option value='1927'>1927</option><option value='1928'>1928</option><option value='1929'>1929</option><option value='1930'>1930</option><option value='1931'>1931</option><option value='1932'>1932</option><option value='1933'>1933</option><option value='1934'>1934</option><option value='1935'>1935</option><option value='1936'>1936</option><option value='1937'>1937</option><option value='1938'>1938</option><option value='1939'>1939</option><option value='1940'>1940</option><option value='1941'>1941</option><option value='1942'>1942</option><option value='1943'>1943</option><option value='1944'>1944</option><option value='1945'>1945</option><option value='1946'>1946</option><option value='1947'>1947</option><option value='1948'>1948</option><option value='1949'>1949</option><option value='1950'>1950</option><option value='1951'>1951</option><option value='1952'>1952</option><option value='1953'>1953</option><option value='1954'>1954</option><option value='1955'>1955</option><option value='1956'>1956</option><option value='1957'>1957</option><option value='1958'>1958</option><option value='1959'>1959</option><option value='1960'>1960</option><option value='0' SELECTED>YYYY</option><option value='1961'>1961</option><option value='1962'>1962</option><option value='1963'>1963</option><option value='1964'>1964</option><option value='1965'>1965</option><option value='1966'>1966</option><option value='1967'>1967</option><option value='1968'>1968</option><option value='1969'>1969</option><option value='1970'>1970</option><option value='1971'>1971</option><option value='1972'>1972</option><option value='1973'>1973</option><option value='1974'>1974</option><option value='1975'>1975</option><option value='1976'>1976</option><option value='1977'>1977</option><option value='1978'>1978</option><option value='1979'>1979</option><option value='1980'>1980</option><option value='1981'>1981</option><option value='1982'>1982</option><option value='1983'>1983</option><option value='1984'>1984</option><option value='1985'>1985</option><option value='1986'>1986</option><option value='1987'>1987</option><option value='1988'>1988</option><option value='1989'>1989</option><option value='1990'>1990</option><option value='1991'>1991</option><option value='1992'>1992</option><option value='1993'>1993</option><option value='1994'>1994</option><option value='1995'>1995</option><option value='1996'>1996</option><option value='1997'>1997</option><option value='1998'>1998</option><option value='1999'>1999</option><option value='2000'>2000</option><option value='2001'>2001</option></select>
+
+ </td>
+
+</tr>
+
+<tr>
+
+  <td height="10"> </td>
+
+  <td height="10"> </td>
+
+</tr>
+
+
+
+<tr>
+
+ <td width= '50%' align="center" valign="top">
+
+        <input type=radio name="searchcr"  value="onsign" onClick="searchcriteria(2)" checked>
+
+        <select name="chinese1"><option value='Chinese'>Chinese</option><option value='Rat'>Rat</option><option value='Ox'>Ox</option><option value='Tiger'>Tiger</option><option value='Rabbit'>Rabbit</option><option value='Dragon'>Dragon</option><option value='Snake'>Snake</option><option value='Horse'>Horse</option><option value='Goat'>Goat</option><option value='Monkey'>Monkey</option><option value='Rooster'>Rooster</option><option value='Dog'>Dog</option><option value='Pig'>Pig</option></select>
+
+        <select name="western1"><option value='Western'>Western</option><option value='Aries'>Aries</option><option value='Taurus'>Taurus</option><option value='Gemini'>Gemini</option><option value='Cancer'>Cancer</option><option value='Leo'>Leo</option><option value='Virgo'>Virgo</option><option value='Libra'>Libra</option><option value='Scorpio'>Scorpio</option><option value='Sagittarius'>Sagittarius</option><option value='Capricorn'>Capricorn</option><option value='Aquarius'>Aquarius</option><option value='Pisces'>Pisces</option></select>
+
+ </td>
+
+ <td width= '50%' align="center" valign="top">
+
+        <select name="chinese2"><option value='Chinese'>Chinese</option><option value='Rat'>Rat</option><option value='Ox'>Ox</option><option value='Tiger'>Tiger</option><option value='Rabbit'>Rabbit</option><option value='Dragon'>Dragon</option><option value='Snake'>Snake</option><option value='Horse'>Horse</option><option value='Goat'>Goat</option><option value='Monkey'>Monkey</option><option value='Rooster'>Rooster</option><option value='Dog'>Dog</option><option value='Pig'>Pig</option></select>
+
+        <select name="western2"><option value='Western'>Western</option><option value='Aries'>Aries</option><option value='Taurus'>Taurus</option><option value='Gemini'>Gemini</option><option value='Cancer'>Cancer</option><option value='Leo'>Leo</option><option value='Virgo'>Virgo</option><option value='Libra'>Libra</option><option value='Scorpio'>Scorpio</option><option value='Sagittarius'>Sagittarius</option><option value='Capricorn'>Capricorn</option><option value='Aquarius'>Aquarius</option><option value='Pisces'>Pisces</option></select>
+
+ </td>
+
+</tr>
+
+<tr>
+
+  <td height="15"> </td>
+
+  <td height="15"> </td>
+
+</tr>
+
+<tr> 
+
+  <td width= '50%' align="center" height="210"><img name='img1' border=0 src=''></td><td width= '50%' align="center" height="210"><img name='img2' border=0 src=''></td></tr>
+<tr> 
+
+<td align="center" valign="middle" height="35"> 
+
+</td>
+
+<td align="center" valign="middle" height="35">  
+
+</td></tr> 
+
+
+
+<tr>
+
+  <td height="5"> </td>
+
+  <td height="5"> </td>
+
+</tr>
+
+<tr>
+
+  <td height="5" align="center" colspan="2"><INPUT TYPE="button" onclick="JavaScript:check();" value="Predict"></td>
+
+</tr>
+
+
+
+<tr>
+
+  <td height="5"> </td>
+
+  <td height="5"> </td>
+
+</tr>
+
+
+
+
+
+ <tr> 
+
+  <td colspan="2" align="center" valign="middle" height="35"><b style="font-size: 16; color: red;">Compatibility: <input name='cfield' style='width:40; border:1px, solid;' value=''></b></td>
+ </tr>
+ <tr>
+   <td colspan="2" align="center" valign="middle" height="35"><table border=0 cellspacing=0 cellpadding=0 width=400 align=center>
+     <tr>
+       <td bgcolor='#00CC33'><img name='indi1' width=1 height=20 src='img/n.gif'></td>
+       <td bgcolor='#FFFF99'><img name='indi2' width=1 height=20 src='img/n.gif'></td>
+     </tr>
+   </table></td>
+</tr>
+
+</table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+
+</FORM>
+
+<!-- Main Body -->
