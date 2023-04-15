@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubleSign Compatibility Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="date"] {
+            font-size: 14px;
+        }
+
+        .select-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+        }
+
+        select {
+            width: 100px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 1em;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DoubleSign Compatibility Calculator</h1>
+        <form id="compatibility-form">
+            <fieldset>
+                <input type="radio" name="mode" value="doubleSign" id="doubleSignMode" checked>
+                <label for="doubleSignMode">DoubleSign</label>
+                <input type="radio" name="mode" value="dob" id="dobMode">
+                <label for="dobMode">Date of Birth</label>
+            </fieldset>
+            <div id="doubleSignInput">
+                <div class="select-container">
+                    <label for="person1_lunar">Person 1 Lunar:</label>
+                    <select name="person1_lunar" id="person1_lunar">
+                        <option value="Rat">Rat</option>
+                        <option value="Ox">Ox</option>
+                        <!-- Add other lunar zodiac options here -->
+                    </select>
+                </div>
+                <div class="select-container">
+                    <label for="person1_sun">Person 1 Sun:</label>
+                    <select name="person1_sun" id="person1_sun">
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <!-- Add other sun zodiac options here -->
+                    </select>
+                </div>
+                <div class="select-container">
+                    <label for="person2_lunar">Person 2 Lunar:</label>
+                    <select name="person2_lunar" id="person2_lunar">
+                        <option value="Rat">Rat</option>
+
+
+
+                        <option value="Ox">Ox</option>
+                        <!-- Add other lunar zodiac options here -->
+                    </select>
+                </div>
+                <div class="select-container">
+                    <label for="person2_sun">Person 2 Sun:</label>
+                    <select name="person2_sun" id="person2_sun">
+                        <option value="Aries">Aries</option>
+                        <option value="Taurus">Taurus</option>
+                        <!-- Add other sun zodiac options here -->
+                    </select>
+                </div>
+            </div>
+            <div id="dobInput" style="display: none;">
+                <div class="select-container">
+                    <label for="person1_dob">Person 1 Date of Birth:</label>
+                    <input type="date" id="person1_dob" name="person1_dob">
+                </div>
+                <div class="select-container">
+                    <label for="person2_dob">Person 2 Date of Birth:</label>
+                    <input type="date" id="person2_dob" name="person2_dob">
+                </div>
+            </div>
+            <button type="submit" id="calculate-btn">Calculate Compatibility</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('compatibility-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Calculate compatibility logic here
+            document.getElementById('result').innerText = 'Compatibility: 80%';
+        });
+
+        document.getElementById('doubleSignMode').addEventListener('change', function() {
+            document.getElementById('doubleSignInput').style.display = 'flex';
+            document.getElementById('dobInput').style.display = 'none';
+        });
+
+        document.getElementById('dobMode').addEventListener('change', function() {
+            document.getElementById('doubleSignInput').style.display = 'none';
+            document.getElementById('dobInput').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
+
+
