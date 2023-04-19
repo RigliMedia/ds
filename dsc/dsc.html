@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubleSign Compatibility Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1c86ee;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>DoubleSign Compatibility Calculator</h1>
+    <form id="compatibility-form">
+        <label>
+            Mode
+            <select name="mode">
+                <option value="doubleSign">By DoubleSign</option>
+                <option value="dob">By Date of Birth</option>
+            </select>
+        </label>
+        <div id="doubleSignInput">
+            <div>
+                <label>Person 1 Lunar</label>
+                <select name="person1_lunar">
+                    <option>Rat</option>
+                    <option>Ox</option>
+                </select>
+            </div>
+            <div>
+                <label>Person 1 Sun</label>
+                <select name="person1_sun">
+                    <option>Aries</option>
+                    <option>Taurus</option>
+                </select>
+            </div>
+            <div>
+                <label>Person 2 Lunar</label>
+                <select name="person2_lunar">
+                    <option>Rat</option>
+                    <option>Ox</option>
+                </select>
+            </div>
+            <div>
+                <label>Person 2 Sun</label>
+                <select name="person2_sun">
+                    <option>Aries</option>
+                    <option>Taurus</option>
+                </select>
+            </div>
+        </div>
+        <div id="dobInput" style="display: none;">
+            <div>
+                <label>Person 1 Date of Birth</label>
+                <input type="date" name="person1_dob">
+            </div>
+            <div>
+                <label>Person 2 Date of Birth</label>
+                <input type="date" name="person2_dob">
+            </div>
+        </div>
+        <input type="submit" value="Calculate Compatibility">
+        <div id="result"></div>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+           
+            const form = document.getElementById('compatibility-form');
+            const modeSelect = form.elements['mode'];
+            const doubleSignInput = document.getElementById('doubleSignInput');
+            const dobInput = document.getElementById('dobInput');
+            const resultDiv = document.getElementById('result');
+
+            modeSelect.addEventListener('change', function (event) {
+                if (event.target.value === 'dob') {
+                    doubleSignInput.style.display = 'none';
+                    dobInput.style.display = 'block';
+                } else {
+                    doubleSignInput.style.display = 'block';
+                    dobInput.style.display = 'none';
+                }
+            });
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                if (modeSelect.value === 'dob') {
+                    // Date of birth compatibility calculation
+                    resultDiv.textContent = 'Date of birth compatibility calculation is not yet implemented.';
+                } else {
+                    // DoubleSign compatibility calculation
+                    const person1_lunar = form.elements['person1_lunar'].value;
+                    const person1_sun = form.elements['person1_sun'].value;
+                    const person2_lunar = form.elements['person2_lunar'].value;
+                    const person2_sun = form.elements['person2_sun'].value;
+
+                    // Dummy compatibility score calculation
+                    const compatibilityScore = Math.floor(Math.random() * 101);
+
+                    resultDiv.textContent = `Compatibility Score: ${compatibilityScore}%`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
