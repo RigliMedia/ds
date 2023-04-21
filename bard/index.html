@@ -1,0 +1,116 @@
+// This code calculates the compatibility of two people based on their birth dates, times, and locations.
+
+// Get the user's birth date and time.
+var userBirthDate = prompt("What is your birth date (YYYY-MM-DD)?");
+var userBirthTime = prompt("What is your birth time (HH:MM:SS)?");
+
+// Get the user's partner's birth date and time.
+var partnerBirthDate = prompt("What is your partner's birth date (YYYY-MM-DD)?");
+var partnerBirthTime = prompt("What is your partner's birth time (HH:MM:SS)?");
+
+// Get the user's location.
+var userLocation = prompt("What is your location (city, state)?");
+
+// Calculate the user's horoscope sign.
+var userHoroscopeSign = calculateHoroscopeSign(userBirthDate, userBirthTime);
+
+// Calculate the user's partner's horoscope sign.
+var partnerHoroscopeSign = calculateHoroscopeSign(partnerBirthDate, partnerBirthTime);
+
+// Calculate the user's compatibility score.
+var compatibilityScore = calculateCompatibilityScore(userHoroscopeSign, partnerHoroscopeSign, userLocation);
+
+// Display the user's compatibility score and compatibility tips.
+var compatibilityTips = getCompatibilityTips(compatibilityScore);
+
+alert("Your compatibility score is " + compatibilityScore + ". Here are some compatibility tips for you: " + compatibilityTips);
+
+// Function to calculate the user's horoscope sign.
+function calculateHoroscopeSign(birthDate, birthTime) {
+
+// Get the user's birth date and time in milliseconds.
+var birthDateInMilliseconds = new Date(birthDate).getTime();
+var birthTimeInMilliseconds = new Date(birthTime).getTime();
+
+// Calculate the user's zodiac sign.
+var zodiacSign = getZodiacSign(birthDateInMilliseconds, birthTimeInMilliseconds);
+
+// Return the user's horoscope sign.
+return zodiacSign;
+
+}
+
+// Function to calculate the compatibility score.
+function calculateCompatibilityScore(userHoroscopeSign, partnerHoroscopeSign, userLocation) {
+
+// Get the user's and partner's horoscope element.
+var userHoroscopeElement = getElement(userHoroscopeSign);
+var partnerHoroscopeElement = getElement(partnerHoroscopeSign);
+
+// Get the user's and partner's location element.
+var userLocationElement = getElement(userLocation);
+
+// Calculate the compatibility score.
+var compatibilityScore = calculateCompatibilityScore(userHoroscopeElement, partnerHoroscopeElement, userLocationElement);
+
+// Return the compatibility score.
+return compatibilityScore;
+
+}
+
+// Function to get the compatibility tips.
+function getCompatibilityTips(compatibilityScore) {
+
+// Get the compatibility tips for the given compatibility score.
+var compatibilityTips = getCompatibilityTips(compatibilityScore);
+
+// Return the compatibility tips.
+return compatibilityTips;
+
+}
+
+// Function to get the user's horoscope element.
+function getElement(horoscopeSign) {
+
+// Get the user's horoscope element.
+var horoscopeElement = horoscopeSigns[horoscopeSign];
+
+// Return the user's horoscope element.
+return horoscopeElement;
+
+}
+
+// Function to calculate the compatibility score.
+function calculateCompatibilityScore(userHoroscopeElement, partnerHoroscopeElement, userLocationElement) {
+
+// Calculate the compatibility score.
+var compatibilityScore = (userHoroscopeElement + partnerHoroscopeElement + userLocationElement) / 3;
+
+// Return the compatibility score.
+return compatibilityScore;
+
+}
+
+// Array of horoscope signs.
+var horoscopeSigns = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"];
+
+
+
+// Images of horoscope signs
+
+var compatibilityImages = [
+  "image1.png",
+  "image2.png",
+  "image3.png",
+  "image4.png",
+  "image5.png",
+];
+
+
+// Array of compatibility tips.
+var compatibilityTips = [
+  "You are a great match!",
+  "You have a lot in common",
+  "You are compatible but there are some challenges",
+  "You are not compatible",
+];
